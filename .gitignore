@@ -1,6 +1,7 @@
 __pycache__
 .gitignore
 resultados.txt
+resultados.csv
 
 venv/
 

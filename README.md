@@ -96,6 +96,7 @@ portscan -i 127.0.0.1 -s 1 -e 100
 | -t/--threads   | Número de hilos (default: 100)                       |
 | --timeout      | Tiempo de espera por puerto en segundos (default: 1) |
 | -h             | Mostrar ayuda                                        |
+| -o/--output    | Exportación a CSV                                    |
 
 ### Ejemplo Avanzado
 
@@ -107,6 +108,12 @@ portscan -i 127.0.0.1 -s 1 -e 100 --threads 200 --timeout 0.5
 
 ```bash
 portscan -i 127.0.0.1 -s 1 -e 100 > resultados.txt
+```
+
+### Redireccion de Salida con exportación CSV
+
+```bash
+portscan -i 127.0.0.1 -s 1 -e 200 -o resultados.csv
 ```
 
 ---
