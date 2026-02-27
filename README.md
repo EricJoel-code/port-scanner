@@ -16,6 +16,7 @@ El proyecto está estructurado como paquete instalable y puede ejecutarse como:
 * Definición de rango personalizado
 * Identificación de puertos abiertos y cerrados
 * Escaneo concurrente con multithreading configurable
+* Exportación de resultados a CSV
 * Configuración de número de hilos (--threads)
 * Configuración de timeout por puerto (--timeout)
 * Medición del tiempo total de escaneo
@@ -96,7 +97,7 @@ portscan -i 127.0.0.1 -s 1 -e 100
 | -t/--threads   | Número de hilos (default: 100)                       |
 | --timeout      | Tiempo de espera por puerto en segundos (default: 1) |
 | -h             | Mostrar ayuda                                        |
-| -o/--output    | Exportación a CSV                                    |
+| -o/--output    | Archivo CSV para exportar resultados                 |
 
 ### Ejemplo Avanzado
 
