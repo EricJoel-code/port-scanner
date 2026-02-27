@@ -16,6 +16,8 @@ El proyecto está estructurado como paquete instalable y puede ejecutarse como:
 * Definición de rango personalizado
 * Identificación de puertos abiertos y cerrados
 * Escaneo concurrente con multithreading configurable
+* Detección básica de servicios por puerto estándar
+* Banner Grabbing (identificación real del servicio)
 * Exportación de resultados a CSV
 * Configuración de número de hilos (--threads)
 * Configuración de timeout por puerto (--timeout)
@@ -35,8 +37,10 @@ port_scanner/
 │
 ├── portscanner/
 │   ├── __init__.py
-│   └── scanner.py        # Lógica principal de escaneo
+│   └── scanner.py        # Motor de escaneo concurrente
 │   └── cli.py            # Escáner por línea de comandos
+│   └── services.py       # Mapeo de puertos comunes
+│   └── banner.py         # Banner grabbing
 │
 ├── gui/
 │   └── app.py            # Interfaz gráfica (tkinter)
@@ -114,7 +118,14 @@ portscan -i 127.0.0.1 -s 1 -e 100 > resultados.txt
 ### Redireccion de Salida con exportación CSV
 
 ```bash
-portscan -i 127.0.0.1 -s 1 -e 200 -o resultados.csv
+portscan -i 127.0.0.1 -s 1 -e 200 -t 200 --timeout 0.5 -o resultados.csv
+```
+
+### Ejemplo de Salida
+
+```bash
+[OPEN] 22 → SSH | Banner: SSH-2.0-OpenSSH_8.4
+[OPEN] 80 → HTTP | Banner: HTTP/1.1 200 OK
 ```
 
 ---
@@ -184,10 +195,13 @@ Las contribuciones son bienvenidas. Puedes:
 * [x] Escaneo multithreading
 * [x] Configuración de threads y timeout
 * [x] Medición de tiempo de escaneo
-* [ ] Exportación a CSV / HTML
-* [ ] Detección de servicios comunes
+* [x] Exportación a CSV 
+* [x] Detección de servicios comunes
+* [x] Banner grabbing
+* [ ] Exportación HTML
 * [ ] Sistema de logs
 * [ ] Tests automatizados
+* [ ] Banner grabbing concurrente optimizado
 
 ---
 

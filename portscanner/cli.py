@@ -1,19 +1,19 @@
 import argparse
-
-# from portscanner.scanner import scan_ports
-from portscanner.scanner import scan_ports
+from .scanner import scan_ports
 import csv
+from .services import get_service
+from .banner import grab_banner
 
 
 # Función para exportar resultados a CSV
 def export_to_csv(filename, open_ports, closed_ports):
     with open(filename, mode="w", newline="") as csvfile:
         writer = csv.writer(csvfile)
-        writer.writerow(["Puerto", "Estado"])
+        writer.writerow(["Puerto", "Estado", "Servicio"])
         for port in open_ports:
-            writer.writerow([port, "OPEN"])
+            writer.writerow([port, "OPEN", get_service(port)])
         for port in closed_ports:
-            writer.writerow([port, "CLOSED"])
+            writer.writerow([port, "CLOSED", "-"])
 
 
 def main():
@@ -78,7 +78,12 @@ def main():
     print("[+] Puertos abiertos:")
     if open_ports:
         for port in open_ports:
-            print(f"    [OPEN] {port}")
+            service = get_service(port)
+            banner = grab_banner(ip, port, timeout)
+            if banner:
+                print(f"    [OPEN] {port} → {service} | Banner: {banner}")
+            else:
+                print(f"    [OPEN] {port} → {service}")
     else:
         print("    Ninguno")
 
