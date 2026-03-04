@@ -19,14 +19,19 @@ El proyecto está estructurado como paquete instalable y puede ejecutarse como:
 * Detección básica de servicios por puerto estándar
 * Banner Grabbing (identificación real del servicio)
 * Exportación de resultados a CSV
+* Generación de reportes HTML estructurados
+* Sistema de logging profesional configurable (INFO, WARNING, ERROR)
+* Manejo robusto de excepciones y errores de red
 * Configuración de número de hilos (--threads)
 * Configuración de timeout por puerto (--timeout)
 * Medición del tiempo total de escaneo
 * CLI profesional con argumentos avanzados
-* Interfaz gráfica no bloqueante
-* Código modular y reutilizable
+* Interfaz gráfica no bloqueante (GUI desacoplada del core)
+* Separación clara de responsabilidades (arquitectura modular)
+* Código reutilizable orientado a paquetes
 * Instalación como paquete local (pip install -e .)
 * Arquitectura preparada para expansión profesional
+* Proyecto orientado a ciberseguridad y análisis de red
 
 ---
 
@@ -41,7 +46,8 @@ port_scanner/
 │   └── cli.py            # Escáner por línea de comandos
 │   └── services.py       # Mapeo de puertos comunes
 │   └── banner.py         # Banner grabbing
-│   └── export.py         # Funcionalidad para exportar los resultados a csv y html 
+│   └── export.py         # Funcionalidad para exportar los resultados a csv y html
+│   └── logger.py         # Configuración profesional de logging
 │
 ├── gui/
 │   └── app.py            # Interfaz gráfica (tkinter)
@@ -50,6 +56,7 @@ port_scanner/
 │
 ├── setup.py
 ├── reporte-ejemplo.html  # Visualización de los resultados escaneados
+├── portscanner.log       # Visualización de los logs
 ├── requirements.txt
 ├── main.py               # Archivo principal
 └── README.md
@@ -207,7 +214,7 @@ Las contribuciones son bienvenidas. Puedes:
 * [x] Detección de servicios comunes
 * [x] Banner grabbing
 * [x] Exportación HTML
-* [ ] Sistema de logs
+* [x] Sistema de logs
 * [ ] Tests automatizados
 * [ ] Banner grabbing concurrente optimizado
 
