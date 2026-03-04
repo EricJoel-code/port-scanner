@@ -1,0 +1,10 @@
+2026-03-03 21:38:20 | INFO | Escaneo iniciado en 8.8.8.8 (1-200)
+2026-03-03 21:38:21 | INFO | Puerto 53 abierto - Servicio: DNS
+2026-03-03 21:38:21 | INFO | Escaneo completado en 0.5894 segundos
+2026-03-03 21:39:05 | INFO | Escaneo iniciado en 8.8.8.8 (1-200)
+2026-03-03 21:39:07 | INFO | Puerto 53 abierto - Servicio: DNS
+2026-03-03 21:39:08 | INFO | Reporte HTML generado: reporte-ejemplo.html
+2026-03-03 21:39:08 | INFO | Escaneo completado en 0.6083 segundos
+2026-03-03 21:40:32 | INFO | Escaneo iniciado en 192.168.1.1 (1-200)
+2026-03-03 21:40:32 | INFO | Resultados exportados en formato CSV: resultados.csv
+2026-03-03 21:40:32 | INFO | Escaneo completado en 0.6215 segundos

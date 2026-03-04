@@ -3,6 +3,7 @@ from .scanner import scan_ports
 from .services import get_service
 from .banner import grab_banner
 from .exporter import export_to_csv, export_to_html
+from .logger import setup_logger
 
 
 def main():
@@ -48,6 +49,7 @@ def main():
     # Leer los argumentos de la línea de comandos
 
     args = parser.parse_args()
+    logger = setup_logger()
 
     ip = args.ip
     start_port = args.start
@@ -57,6 +59,8 @@ def main():
     output_file = args.output
 
     print(f"[+] Escaneando {ip} ({start_port}-{end_port})...\n")
+
+    logger.info(f"Escaneo iniciado en {ip} ({start_port}-{end_port})")
 
     # Llamar a la lógica reutilizada, obteniendo los puertos abiertos, cerrados y el tiempo de escaneo.
     open_ports, closed_ports, elapsed_time = scan_ports(
@@ -69,6 +73,9 @@ def main():
         for port in open_ports:
             service = get_service(port)
             banner = grab_banner(ip, port, timeout)
+
+            logger.info(f"Puerto {port} abierto - Servicio: {service}")
+
             if banner:
                 print(f"    [OPEN] {port} → {service} | Banner: {banner}")
             else:
@@ -84,6 +91,7 @@ def main():
         if output_file.endswith(".csv"):
             export_to_csv(output_file, open_ports, closed_ports)
             print(f"\n[+] Resultados guardados en {output_file}")
+            logger.info(f"Resultados exportados en formato CSV: {output_file}")
         elif output_file.endswith(".html"):
             export_to_html(
                 output_file,
@@ -95,9 +103,13 @@ def main():
                 elapsed_time,
             )
             print(f"\n[+] Reporte HTML generado en {output_file}")
+            logger.info(f"Reporte HTML generado: {output_file}")
+
         else:
             print(f"\n[!] Formato no soportado. Use .csv o .html")
+            logger.warning("Intento de exportación con formato no soportado")
 
+    logger.info(f"Escaneo completado en {elapsed_time} segundos")
     print(f"\n[✔] Escaneo completado en {elapsed_time} segundos.")
 
 
