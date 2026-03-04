@@ -41,6 +41,7 @@ port_scanner/
 │   └── cli.py            # Escáner por línea de comandos
 │   └── services.py       # Mapeo de puertos comunes
 │   └── banner.py         # Banner grabbing
+│   └── export.py         # Funcionalidad para exportar los resultados a csv y html 
 │
 ├── gui/
 │   └── app.py            # Interfaz gráfica (tkinter)
@@ -48,6 +49,7 @@ port_scanner/
 ├── venv/                 # Entorno virtual
 │
 ├── setup.py
+├── reporte-ejemplo.html  # Visualización de los resultados escaneados
 ├── requirements.txt
 ├── main.py               # Archivo principal
 └── README.md
@@ -118,7 +120,13 @@ portscan -i 127.0.0.1 -s 1 -e 100 > resultados.txt
 ### Redireccion de Salida con exportación CSV
 
 ```bash
-portscan -i 127.0.0.1 -s 1 -e 200 -t 200 --timeout 0.5 -o resultados.csv
+portscan -i 192.168.1.1 -s 1 -e 200 -t 200 --timeout 0.5 -o resultados.csv
+```
+
+### Redireccion de Salida con exportación HTML
+
+```bash
+portscan -i 8.8.8.8 -s 1 -e 200 -t 200 --timeout 0.5 -o reporte.html
 ```
 
 ### Ejemplo de Salida
@@ -198,7 +206,7 @@ Las contribuciones son bienvenidas. Puedes:
 * [x] Exportación a CSV 
 * [x] Detección de servicios comunes
 * [x] Banner grabbing
-* [ ] Exportación HTML
+* [x] Exportación HTML
 * [ ] Sistema de logs
 * [ ] Tests automatizados
 * [ ] Banner grabbing concurrente optimizado
