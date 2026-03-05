@@ -14,6 +14,7 @@ El proyecto está estructurado como paquete instalable y puede ejecutarse como:
 
 * Escaneo de puertos TCP
 * Definición de rango personalizado
+* Escaneo de red completa usando CIDR (ej: 192.168.1.0/24)
 * Identificación de puertos abiertos y cerrados
 * Escaneo concurrente con multithreading configurable
 * Detección básica de servicios por puerto estándar
@@ -48,6 +49,8 @@ port_scanner/
 │   └── banner.py         # Banner grabbing
 │   └── export.py         # Funcionalidad para exportar los resultados a csv y html
 │   └── logger.py         # Configuración profesional de logging
+│   └── discovery.py      # Configuración para verifica si un host está activo 
+│   └── network.py        # Configuración para convertir una IP o red CIDR en una lista de hosts
 │
 ├── gui/
 │   └── app.py            # Interfaz gráfica (tkinter)
@@ -55,7 +58,8 @@ port_scanner/
 ├── venv/                 # Entorno virtual
 │
 ├── setup.py
-├── reporte-ejemplo.html  # Visualización de los resultados escaneados
+├── reporte-puertos.html  # Visualización de los puertos escaneados 
+├── reporte-hosts.html    # Visualización de los resultados de los hosts activos (si no hay hosts activos los campos quedan vacios)
 ├── portscanner.log       # Visualización de los logs
 ├── requirements.txt
 ├── main.py               # Archivo principal
@@ -104,18 +108,25 @@ portscan -i 127.0.0.1 -s 1 -e 100
 
 | Parámetro      | Descripción                                          |
 | -------------- | ---------------------------------------------------- |
-| -i/--i         | Dirección IP objetivo                                |
+| -i/--i         | Dirección IP objetivo o red CIDR                     |
 | -s/--start     | Puerto inicial                                       |
 | -e/--end       | Puerto final                                         |
 | -t/--threads   | Número de hilos (default: 100)                       |
 | --timeout      | Tiempo de espera por puerto en segundos (default: 1) |
 | -h             | Mostrar ayuda                                        |
-| -o/--output    | Archivo CSV para exportar resultados                 |
+| -o/--output    | Exportar resultados a archivo CSV o HTML             |
 
 ### Ejemplo Avanzado
 
 ```bash
 portscan -i 127.0.0.1 -s 1 -e 100 --threads 200 --timeout 0.5
+```
+
+### Ejemplo de Salida
+
+```bash
+[OPEN] 22 → SSH | Banner: SSH-2.0-OpenSSH_8.4
+[OPEN] 80 → HTTP | Banner: HTTP/1.1 200 OK
 ```
 
 ### Redireccion de Salida
@@ -136,12 +147,41 @@ portscan -i 192.168.1.1 -s 1 -e 200 -t 200 --timeout 0.5 -o resultados.csv
 portscan -i 8.8.8.8 -s 1 -e 200 -t 200 --timeout 0.5 -o reporte.html
 ```
 
-### Ejemplo de Salida
+### Escaneo de red completa
+Esto escaneará todos los hosts de la red dentro del rango de puertos indicado
 
 ```bash
-[OPEN] 22 → SSH | Banner: SSH-2.0-OpenSSH_8.4
-[OPEN] 80 → HTTP | Banner: HTTP/1.1 200 OK
+portscan -i 192.168.1.0/24 -s 20 -e 50
 ```
+
+### Escaneo rápido de red con exportación
+
+Este comando:
+```bash
+portscan -i 192.168.1.0/24 -s 20 -e 50 --threads 200 --timeout 0.5 -o reporte.html
+```
+- Escanea toda la red local
+- Revisa puertos del 20 al 50
+- Usa 200 hilos concurrentes
+- Timeout de 0.5 segundos por puerto
+- Genera reporte HTML
+
+¿Cuándo termina el escaneo?
+El escaneo finaliza cuando:
+```
+Todos los puertos del rango definido
+han sido evaluados en todos los hosts objetivo
+```
+Por ejemplo:
+```
+192.168.1.0/24
+Puertos 20 → 50
+```
+Se ejecutarán aproximadamente:
+```
+254 hosts × 31 puertos ≈ 7874 conexiones
+```
+El uso de threads permite acelerar significativamente este proceso.
 
 ---
 
