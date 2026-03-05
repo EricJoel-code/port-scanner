@@ -1,3 +1,22 @@
 2026-03-04 20:46:36 | INFO | Escaneo iniciado para 127.0.0.1
 2026-03-04 20:46:36 | INFO | Iniciando escaneo en 127.0.0.1
 2026-03-04 20:46:37 | INFO | Escaneo completado en 127.0.0.1
+2026-03-04 21:04:29 | INFO | Hosts detectados en rango: 254
+2026-03-04 21:04:39 | INFO | Hosts activos: []
+2026-03-04 21:04:39 | WARNING | No se detectaron hosts activos
+2026-03-04 21:05:50 | INFO | Hosts detectados en rango: 254
+2026-03-04 21:05:59 | INFO | Hosts activos: []
+2026-03-04 21:05:59 | WARNING | No se detectaron hosts activos
+2026-03-04 21:08:07 | INFO | Hosts detectados en rango: 1
+2026-03-04 21:08:07 | INFO | Hosts activos: ['127.0.0.1']
+2026-03-04 21:08:07 | INFO | Iniciando escaneo en 127.0.0.1
+2026-03-04 21:08:08 | INFO | Escaneo finalizado en 127.0.0.1 (1.0817s)
+2026-03-04 21:17:40 | INFO | Hosts detectados en rango: 254
+2026-03-04 21:17:49 | INFO | Hosts activos: []
+2026-03-04 21:17:49 | WARNING | No se detectaron hosts activos
+2026-03-04 21:21:09 | INFO | Hosts detectados en rango: 1
+2026-03-04 21:21:09 | INFO | Hosts activos: ['8.8.8.8']
+2026-03-04 21:21:09 | INFO | Iniciando escaneo en 8.8.8.8
+2026-03-04 21:21:10 | INFO | 8.8.8.8:53 abierto - servicio: DNS
+2026-03-04 21:21:12 | INFO | Reporte HTML generado: reporte-puertos.html
+2026-03-04 21:21:12 | INFO | Escaneo finalizado en 8.8.8.8 (0.6176s)

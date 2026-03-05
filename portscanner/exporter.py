@@ -57,7 +57,7 @@ th {{ background-color: #333; color: white; }}
         # Puertos abiertos
         for port in open_ports:
             service = get_service(port)
-            banner = grab_banner(ip, port)
+            banner = grab_banner(ip, port, timeout=1)
             f.write(
                 f"""
 <tr class="open">
