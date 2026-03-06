@@ -29,6 +29,7 @@ El proyecto está estructurado como paquete instalable y puede ejecutarse como:
 * CLI profesional con argumentos avanzados
 * Interfaz gráfica no bloqueante (GUI desacoplada del core)
 * Separación clara de responsabilidades (arquitectura modular)
+* Barra de progreso al escanear
 * Código reutilizable orientado a paquetes
 * Instalación como paquete local (pip install -e .)
 * Arquitectura preparada para expansión profesional
@@ -51,6 +52,7 @@ port_scanner/
 │   └── logger.py         # Configuración profesional de logging
 │   └── discovery.py      # Configuración para verifica si un host está activo 
 │   └── network.py        # Configuración para convertir una IP o red CIDR en una lista de hosts
+│   └── progress.py       # Configuración para ver la barra de progreso al escanear un puerto y el host
 │
 ├── gui/
 │   └── app.py            # Interfaz gráfica (tkinter)
