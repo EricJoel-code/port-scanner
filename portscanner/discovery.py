@@ -1,6 +1,7 @@
 import subprocess
 import platform
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from .progress import show_network_progress
 
 
 def ping_host(host):
@@ -29,6 +30,8 @@ def discover_hosts(hosts, threads=100):
     """
 
     active_hosts = []
+    total_hosts = len(hosts)
+    completed = 0
 
     with ThreadPoolExecutor(max_workers=threads) as executor:
 
@@ -43,5 +46,10 @@ def discover_hosts(hosts, threads=100):
                     active_hosts.append(host)
             except:
                 pass
+
+            completed += 1
+            show_network_progress(completed, total_hosts)
+
+    print()  # salto de línea
 
     return sorted(active_hosts)

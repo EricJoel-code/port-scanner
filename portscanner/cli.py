@@ -6,6 +6,7 @@ from .exporter import export_to_csv, export_to_html
 from .logger import setup_logger
 from .network import get_hosts
 from .discovery import discover_hosts
+from .progress import show_network_progress
 
 
 def main():
@@ -81,7 +82,9 @@ def main():
         return
 
     # Escaneo de cada host activo
-    for host in active_hosts:
+    total_hosts = len(active_hosts)
+
+    for index, host in enumerate(active_hosts, start=1):
 
         print(f"\n[+] Escaneando host {host} ({start_port}-{end_port})")
 
@@ -152,6 +155,8 @@ def main():
         logger.info(f"Escaneo finalizado en {host} ({elapsed_time}s)")
 
         print(f"\n[✔] Escaneo completado en {elapsed_time} segundos.")
+        show_network_progress(index, total_hosts)
+        print()
 
 
 if __name__ == "__main__":

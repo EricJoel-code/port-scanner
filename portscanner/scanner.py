@@ -1,56 +1,65 @@
-#socket es una biblioteca que se utiliza para crear conexiones de red 
+# socket es una biblioteca que se utiliza para crear conexiones de red
 import socket
 from concurrent.futures import ThreadPoolExecutor, as_completed
-import time 
+import time
+
 
 def scan_port(ip, port, timeout):
     """
     Escanea un puerto específico en una dirección IP.
-    
-    Args:
-        ip (str): La dirección IP a escanear.
-        port (int): El puerto a escanear.
     """
-    #Se crea un objeto de socket utilizando IPv4 (AF_INET) y TCP (SOCK_STREAM).
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    #Se establece un tiempo de espera de 1 segundo para la conexión.
     sock.settimeout(timeout)
+
     try:
         result = sock.connect_ex((ip, port))
-        if result == 0:
-            return True
-        else:
-            return False
+        return result == 0
     except socket.error:
         return False
     finally:
         sock.close()
 
+
+def print_progress(completed, total):
+    """
+    Muestra una barra de progreso visual en consola.
+    """
+    bar_length = 30
+    percent = completed / total
+    filled_length = int(bar_length * percent)
+
+    bar = "█" * filled_length + "-" * (bar_length - filled_length)
+
+    print(
+        f"\rProgress: [{bar}] {percent*100:.1f}% ({completed}/{total})",
+        end="",
+        flush=True,
+    )
+
+
 def scan_ports(ip, start_port, end_port, threads=100, timeout=1):
     """
     Escanea un rango de puertos en una dirección IP específica.
-    
-    Args:
-        ip (str): La dirección IP a escanear.
-        start_port (int): El puerto inicial del rango.
-        end_port (int): El puerto final del rango.
     """
-    # Se registra el tiempo de inicio del escaneo para calcular la duración total al finalizar.
+
     start_time = time.time()
-    
-    #Lista para almacenar los puertos abiertos y cerrados
+
     open_ports = []
     closed_ports = []
 
-    ports = range(start_port, end_port + 1)
-    #Utiliza un ThreadPoolExecutor para escanear los puertos en paralelo, lo que mejora el rendimiento.
+    ports = list(range(start_port, end_port + 1))
+    total_ports = len(ports)
+    completed = 0
+
     with ThreadPoolExecutor(max_workers=threads) as executor:
+
         future_to_port = {
             executor.submit(scan_port, ip, port, timeout): port for port in ports
         }
-        
+
         for future in as_completed(future_to_port):
             port = future_to_port[future]
+
             try:
                 if future.result():
                     open_ports.append(port)
@@ -58,9 +67,13 @@ def scan_ports(ip, start_port, end_port, threads=100, timeout=1):
                     closed_ports.append(port)
             except Exception:
                 closed_ports.append(port)
-                
-    # Se registra el tiempo de finalización del escaneo y se calcula el tiempo transcurrido, que se devuelve junto con las listas de puertos abiertos y cerrados.           
-    
+
+            # actualizar progreso
+            completed += 1
+            print_progress(completed, total_ports)
+
     elapsed_time = round(time.time() - start_time, 4)
-                
+
+    print()  # salto de línea después de la barra
+
     return sorted(open_ports), sorted(closed_ports), elapsed_time

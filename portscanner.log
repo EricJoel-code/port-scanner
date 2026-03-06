@@ -20,3 +20,34 @@
 2026-03-04 21:21:10 | INFO | 8.8.8.8:53 abierto - servicio: DNS
 2026-03-04 21:21:12 | INFO | Reporte HTML generado: reporte-puertos.html
 2026-03-04 21:21:12 | INFO | Escaneo finalizado en 8.8.8.8 (0.6176s)
+2026-03-05 18:55:44 | INFO | Hosts detectados en rango: 1
+2026-03-05 18:55:45 | INFO | Hosts activos: ['127.0.0.1']
+2026-03-05 18:55:45 | INFO | Iniciando escaneo en 127.0.0.1
+2026-03-05 18:55:46 | INFO | Escaneo finalizado en 127.0.0.1 (1.1924s)
+2026-03-05 18:56:24 | INFO | Hosts detectados en rango: 254
+2026-03-05 18:56:33 | INFO | Hosts activos: []
+2026-03-05 18:56:33 | WARNING | No se detectaron hosts activos
+2026-03-05 19:39:57 | INFO | Hosts detectados en rango: 254
+2026-03-05 19:40:06 | INFO | Hosts activos: []
+2026-03-05 19:40:06 | WARNING | No se detectaron hosts activos
+2026-03-05 19:40:20 | INFO | Hosts detectados en rango: 1
+2026-03-05 19:40:20 | INFO | Hosts activos: ['127.0.0.1']
+2026-03-05 19:40:20 | INFO | Iniciando escaneo en 127.0.0.1
+2026-03-05 19:40:21 | INFO | Escaneo finalizado en 127.0.0.1 (1.0616s)
+2026-03-05 19:41:06 | INFO | Hosts detectados en rango: 1
+2026-03-05 19:41:06 | INFO | Hosts activos: ['127.0.0.1']
+2026-03-05 19:41:06 | INFO | Iniciando escaneo en 127.0.0.1
+2026-03-05 19:41:06 | INFO | Escaneo finalizado en 127.0.0.1 (0.5638s)
+2026-03-05 19:41:38 | INFO | Hosts detectados en rango: 254
+2026-03-05 19:41:51 | INFO | Hosts activos: []
+2026-03-05 19:41:51 | WARNING | No se detectaron hosts activos
+2026-03-05 20:36:36 | INFO | Hosts detectados en rango: 254
+2026-03-05 20:36:50 | INFO | Hosts activos: []
+2026-03-05 20:36:50 | WARNING | No se detectaron hosts activos
+2026-03-05 20:46:41 | INFO | Hosts detectados en rango: 254
+2026-03-05 20:46:54 | INFO | Hosts activos: []
+2026-03-05 20:46:54 | WARNING | No se detectaron hosts activos
+2026-03-05 20:47:29 | INFO | Hosts detectados en rango: 1
+2026-03-05 20:47:29 | INFO | Hosts activos: ['127.0.0.1']
+2026-03-05 20:47:29 | INFO | Iniciando escaneo en 127.0.0.1
+2026-03-05 20:47:30 | INFO | Escaneo finalizado en 127.0.0.1 (1.0937s)
