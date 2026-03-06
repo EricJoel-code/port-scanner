@@ -51,3 +51,39 @@
 2026-03-05 20:47:29 | INFO | Hosts activos: ['127.0.0.1']
 2026-03-05 20:47:29 | INFO | Iniciando escaneo en 127.0.0.1
 2026-03-05 20:47:30 | INFO | Escaneo finalizado en 127.0.0.1 (1.0937s)
+2026-03-06 17:52:44 | INFO | Hosts detectados en rango: 1
+2026-03-06 17:52:44 | INFO | Hosts activos: ['127.0.0.1']
+2026-03-06 17:52:44 | INFO | Iniciando escaneo en 127.0.0.1
+2026-03-06 17:52:45 | INFO | Escaneo finalizado en 127.0.0.1 (1.1572s)
+2026-03-06 17:52:55 | INFO | Hosts detectados en rango: 254
+2026-03-06 17:53:08 | INFO | Hosts activos: []
+2026-03-06 17:53:08 | WARNING | No se detectaron hosts activos
+2026-03-06 17:53:36 | INFO | Hosts detectados en rango: 254
+2026-03-06 17:53:49 | INFO | Hosts activos: ['8.8.8.53', '8.8.8.8']
+2026-03-06 17:53:49 | INFO | Iniciando escaneo en 8.8.8.53
+2026-03-06 17:53:50 | INFO | Escaneo finalizado en 8.8.8.53 (1.087s)
+2026-03-06 17:53:50 | INFO | Iniciando escaneo en 8.8.8.8
+2026-03-06 17:53:52 | INFO | 8.8.8.8:53 abierto - servicio: DNS
+2026-03-06 17:53:52 | INFO | Escaneo finalizado en 8.8.8.8 (1.0749s)
+2026-03-06 18:19:17 | INFO | Hosts detectados en rango: 1
+2026-03-06 18:19:17 | INFO | Hosts activos: ['127.0.0.1']
+2026-03-06 18:19:17 | INFO | Iniciando escaneo en 127.0.0.1
+2026-03-06 18:20:40 | INFO | 127.0.0.1:445 abierto - servicio: Unknown
+2026-03-06 18:20:41 | INFO | 127.0.0.1:5432 abierto - servicio: Unknown
+2026-03-06 18:20:41 | INFO | Escaneo finalizado en 127.0.0.1 (1.0121s)
+2026-03-06 18:20:58 | INFO | Hosts detectados en rango: 254
+2026-03-06 18:21:07 | INFO | Hosts activos: []
+2026-03-06 18:21:07 | WARNING | No se detectaron hosts activos
+2026-03-06 18:52:31 | INFO | Hosts detectados en rango: 1
+2026-03-06 18:52:32 | INFO | Hosts activos: ['127.0.0.1']
+2026-03-06 18:52:32 | INFO | Iniciando escaneo en 127.0.0.1
+2026-03-06 18:52:33 | INFO | Escaneo finalizado en 127.0.0.1 (1.0437s)
+2026-03-06 18:52:49 | INFO | Hosts detectados en rango: 254
+2026-03-06 18:52:58 | INFO | Hosts activos: []
+2026-03-06 18:52:58 | WARNING | No se detectaron hosts activos
+2026-03-06 18:53:13 | INFO | Hosts detectados en rango: 1
+2026-03-06 18:53:13 | INFO | Hosts activos: ['127.0.0.1']
+2026-03-06 18:53:13 | INFO | Iniciando escaneo en 127.0.0.1
+2026-03-06 18:53:15 | INFO | 127.0.0.1:445 abierto - servicio: Unknown
+2026-03-06 18:53:16 | INFO | 127.0.0.1:5432 abierto - servicio: Unknown
+2026-03-06 18:53:16 | INFO | Escaneo finalizado en 127.0.0.1 (1.3117s)
