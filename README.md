@@ -13,24 +13,36 @@ El proyecto está estructurado como paquete instalable y puede ejecutarse como:
 ## 🚀 Características
 
 * Escaneo de puertos TCP
-* Definición de rango personalizado
+* Definición de rango personalizado de puertos
+* Escaneo rápido usando Top Ports (puertos más comunes) con --top-ports
 * Escaneo de red completa usando CIDR (ej: 192.168.1.0/24)
+* Descubrimiento automático de hosts activos en la red
 * Identificación de puertos abiertos y cerrados
 * Escaneo concurrente con multithreading configurable
+* Motor de escaneo optimizado que acepta listas de puertos o rangos
 * Detección básica de servicios por puerto estándar
-* Banner Grabbing (identificación real del servicio)
+* Banner Grabbing para identificación real del servicio
+* Barra de progreso en tiempo real durante el escaneo
+* Medición del tiempo total de escaneo
+---
+📊 Exportación y Reportes
 * Exportación de resultados a CSV
 * Generación de reportes HTML estructurados
-* Sistema de logging profesional configurable (INFO, WARNING, ERROR)
-* Manejo robusto de excepciones y errores de red
-* Configuración de número de hilos (--threads)
-* Configuración de timeout por puerto (--timeout)
-* Medición del tiempo total de escaneo
+* Resultados listos para análisis o documentación
+---
+⚙️ Configuración avanzada
+* Configuración de número de hilos --threads
+* Configuración de timeout por puerto --timeout
+* Modo de escaneo optimizado con --top-ports
+---
+🛠 Arquitectura del proyecto
 * CLI profesional con argumentos avanzados
-* Interfaz gráfica no bloqueante (GUI desacoplada del core)
-* Separación clara de responsabilidades (arquitectura modular)
-* Barra de progreso al escanear
+* Interfaz gráfica desacoplada del core
+* Arquitectura modular
+* Separación clara de responsabilidades
 * Código reutilizable orientado a paquetes
+* Sistema de logging profesional (INFO, WARNING, ERROR)
+* Manejo robusto de excepciones y errores de red
 * Instalación como paquete local (pip install -e .)
 * Arquitectura preparada para expansión profesional
 * Proyecto orientado a ciberseguridad y análisis de red
@@ -53,6 +65,7 @@ port_scanner/
 │   └── discovery.py      # Configuración para verifica si un host está activo 
 │   └── network.py        # Configuración para convertir una IP o red CIDR en una lista de hosts
 │   └── progress.py       # Configuración para ver la barra de progreso al escanear un puerto y el host
+│   └── top_ports.py      # Lista de puertos comunes
 │
 ├── gui/
 │   └── app.py            # Interfaz gráfica (tkinter)
@@ -106,6 +119,12 @@ Ejecuta el escáner desde la raíz del proyecto:
 portscan -i 127.0.0.1 -s 1 -e 100
 ```
 
+### Escaneo rápido con puertos comunes
+
+```bash
+portscan -i 127.0.0.1 --top-ports
+```
+
 ### Parámetros disponibles
 
 | Parámetro      | Descripción                                          |
@@ -117,6 +136,7 @@ portscan -i 127.0.0.1 -s 1 -e 100
 | --timeout      | Tiempo de espera por puerto en segundos (default: 1) |
 | -h             | Mostrar ayuda                                        |
 | -o/--output    | Exportar resultados a archivo CSV o HTML             |
+| --top-ports    | Escanea solo los más comunes                         |
 
 ### Ejemplo Avanzado
 
@@ -154,6 +174,12 @@ Esto escaneará todos los hosts de la red dentro del rango de puertos indicado
 
 ```bash
 portscan -i 192.168.1.0/24 -s 20 -e 50
+```
+
+### Escaneo de red rápido
+
+```bash
+portscan -i 192.168.1.0/24 --top-ports --threads 200
 ```
 
 ### Escaneo rápido de red con exportación
@@ -262,16 +288,6 @@ Las contribuciones son bienvenidas. Puedes:
 
 ---
 
-## ⚙️ Configuración avanzada
-
-El escáner permite ajustar el rendimiento mediante:
-
-- --threads: Controla el número de hilos concurrentes.
-- --timeout: Define el tiempo máximo de espera por puerto.
-
-Esto permite adaptar la herramienta a redes rápidas o lentas.
-
----
 
 ## 🎯 Objetivo del Proyecto
 
