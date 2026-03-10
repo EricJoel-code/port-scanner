@@ -84,6 +84,18 @@ port_scanner/
 
 ---
 
+### 🧠 Explicación del flujo de ejecución
+
+1. El usuario ejecuta la herramienta desde CLI o GUI.
+2. El módulo de red genera los hosts a partir de la IP o red CIDR.
+3. Se realiza descubrimiento de hosts activos.
+4. El motor de escaneo analiza los puertos de cada host.
+5. Se identifican servicios y se obtiene el banner de los puertos abiertos.
+6. Los resultados se muestran al usuario y pueden exportarse a CSV o HTML.
+7. Todo el proceso queda registrado en el sistema de logs.
+
+---
+
 ## 🛠 Instalación (Recomendado)
 
 1️⃣ Crear entorno virtual
