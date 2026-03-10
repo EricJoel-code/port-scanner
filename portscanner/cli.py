@@ -1,7 +1,7 @@
 import argparse
 from .scanner import scan_ports
 from .services import get_service
-from .banner import grab_banner
+from .banner import grab_banners_concurrent
 from .exporter import export_to_csv, export_to_html
 from .logger import setup_logger
 from .network import get_hosts
@@ -131,6 +131,9 @@ def main():
             timeout=timeout,
         )
 
+        # Obtener banners de forma concurrente
+        banners = grab_banners_concurrent(host, open_ports, timeout=timeout)
+
         # 🔹 Resultados
         print("\n[+] Puertos abiertos:")
 
@@ -139,7 +142,7 @@ def main():
             for port in open_ports:
 
                 service = get_service(port)
-                banner = grab_banner(host, port, timeout)
+                banner = banners.get(port)
 
                 logger.info(f"{host}:{port} abierto - servicio: {service}")
 

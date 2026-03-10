@@ -1,4 +1,5 @@
 import socket
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
 # Función para intentar grabar el banner de un servicio en un puerto específico
@@ -27,3 +28,32 @@ def grab_banner(ip, port, timeout=1):
         return None
 
     return None
+
+
+def grab_banners_concurrent(ip, ports, timeout=1, threads=20):
+    """
+    Obtiene banners de múltiples puertos abiertos de forma concurrente.
+    """
+
+    results = {}
+
+    if not ports:
+        return results
+
+    with ThreadPoolExecutor(max_workers=threads) as executor:
+
+        future_to_port = {
+            executor.submit(grab_banner, ip, port, timeout): port for port in ports
+        }
+
+        for future in as_completed(future_to_port):
+
+            port = future_to_port[future]
+
+            try:
+                banner = future.result()
+                results[port] = banner
+            except Exception:
+                results[port] = None
+
+    return results

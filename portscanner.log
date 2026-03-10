@@ -1,89 +1,15 @@
-2026-03-04 20:46:36 | INFO | Escaneo iniciado para 127.0.0.1
-2026-03-04 20:46:36 | INFO | Iniciando escaneo en 127.0.0.1
-2026-03-04 20:46:37 | INFO | Escaneo completado en 127.0.0.1
-2026-03-04 21:04:29 | INFO | Hosts detectados en rango: 254
-2026-03-04 21:04:39 | INFO | Hosts activos: []
-2026-03-04 21:04:39 | WARNING | No se detectaron hosts activos
-2026-03-04 21:05:50 | INFO | Hosts detectados en rango: 254
-2026-03-04 21:05:59 | INFO | Hosts activos: []
-2026-03-04 21:05:59 | WARNING | No se detectaron hosts activos
-2026-03-04 21:08:07 | INFO | Hosts detectados en rango: 1
-2026-03-04 21:08:07 | INFO | Hosts activos: ['127.0.0.1']
-2026-03-04 21:08:07 | INFO | Iniciando escaneo en 127.0.0.1
-2026-03-04 21:08:08 | INFO | Escaneo finalizado en 127.0.0.1 (1.0817s)
-2026-03-04 21:17:40 | INFO | Hosts detectados en rango: 254
-2026-03-04 21:17:49 | INFO | Hosts activos: []
-2026-03-04 21:17:49 | WARNING | No se detectaron hosts activos
-2026-03-04 21:21:09 | INFO | Hosts detectados en rango: 1
-2026-03-04 21:21:09 | INFO | Hosts activos: ['8.8.8.8']
-2026-03-04 21:21:09 | INFO | Iniciando escaneo en 8.8.8.8
-2026-03-04 21:21:10 | INFO | 8.8.8.8:53 abierto - servicio: DNS
-2026-03-04 21:21:12 | INFO | Reporte HTML generado: reporte-puertos.html
-2026-03-04 21:21:12 | INFO | Escaneo finalizado en 8.8.8.8 (0.6176s)
-2026-03-05 18:55:44 | INFO | Hosts detectados en rango: 1
-2026-03-05 18:55:45 | INFO | Hosts activos: ['127.0.0.1']
-2026-03-05 18:55:45 | INFO | Iniciando escaneo en 127.0.0.1
-2026-03-05 18:55:46 | INFO | Escaneo finalizado en 127.0.0.1 (1.1924s)
-2026-03-05 18:56:24 | INFO | Hosts detectados en rango: 254
-2026-03-05 18:56:33 | INFO | Hosts activos: []
-2026-03-05 18:56:33 | WARNING | No se detectaron hosts activos
-2026-03-05 19:39:57 | INFO | Hosts detectados en rango: 254
-2026-03-05 19:40:06 | INFO | Hosts activos: []
-2026-03-05 19:40:06 | WARNING | No se detectaron hosts activos
-2026-03-05 19:40:20 | INFO | Hosts detectados en rango: 1
-2026-03-05 19:40:20 | INFO | Hosts activos: ['127.0.0.1']
-2026-03-05 19:40:20 | INFO | Iniciando escaneo en 127.0.0.1
-2026-03-05 19:40:21 | INFO | Escaneo finalizado en 127.0.0.1 (1.0616s)
-2026-03-05 19:41:06 | INFO | Hosts detectados en rango: 1
-2026-03-05 19:41:06 | INFO | Hosts activos: ['127.0.0.1']
-2026-03-05 19:41:06 | INFO | Iniciando escaneo en 127.0.0.1
-2026-03-05 19:41:06 | INFO | Escaneo finalizado en 127.0.0.1 (0.5638s)
-2026-03-05 19:41:38 | INFO | Hosts detectados en rango: 254
-2026-03-05 19:41:51 | INFO | Hosts activos: []
-2026-03-05 19:41:51 | WARNING | No se detectaron hosts activos
-2026-03-05 20:36:36 | INFO | Hosts detectados en rango: 254
-2026-03-05 20:36:50 | INFO | Hosts activos: []
-2026-03-05 20:36:50 | WARNING | No se detectaron hosts activos
-2026-03-05 20:46:41 | INFO | Hosts detectados en rango: 254
-2026-03-05 20:46:54 | INFO | Hosts activos: []
-2026-03-05 20:46:54 | WARNING | No se detectaron hosts activos
-2026-03-05 20:47:29 | INFO | Hosts detectados en rango: 1
-2026-03-05 20:47:29 | INFO | Hosts activos: ['127.0.0.1']
-2026-03-05 20:47:29 | INFO | Iniciando escaneo en 127.0.0.1
-2026-03-05 20:47:30 | INFO | Escaneo finalizado en 127.0.0.1 (1.0937s)
-2026-03-06 17:52:44 | INFO | Hosts detectados en rango: 1
-2026-03-06 17:52:44 | INFO | Hosts activos: ['127.0.0.1']
-2026-03-06 17:52:44 | INFO | Iniciando escaneo en 127.0.0.1
-2026-03-06 17:52:45 | INFO | Escaneo finalizado en 127.0.0.1 (1.1572s)
-2026-03-06 17:52:55 | INFO | Hosts detectados en rango: 254
-2026-03-06 17:53:08 | INFO | Hosts activos: []
-2026-03-06 17:53:08 | WARNING | No se detectaron hosts activos
-2026-03-06 17:53:36 | INFO | Hosts detectados en rango: 254
-2026-03-06 17:53:49 | INFO | Hosts activos: ['8.8.8.53', '8.8.8.8']
-2026-03-06 17:53:49 | INFO | Iniciando escaneo en 8.8.8.53
-2026-03-06 17:53:50 | INFO | Escaneo finalizado en 8.8.8.53 (1.087s)
-2026-03-06 17:53:50 | INFO | Iniciando escaneo en 8.8.8.8
-2026-03-06 17:53:52 | INFO | 8.8.8.8:53 abierto - servicio: DNS
-2026-03-06 17:53:52 | INFO | Escaneo finalizado en 8.8.8.8 (1.0749s)
-2026-03-06 18:19:17 | INFO | Hosts detectados en rango: 1
-2026-03-06 18:19:17 | INFO | Hosts activos: ['127.0.0.1']
-2026-03-06 18:19:17 | INFO | Iniciando escaneo en 127.0.0.1
-2026-03-06 18:20:40 | INFO | 127.0.0.1:445 abierto - servicio: Unknown
-2026-03-06 18:20:41 | INFO | 127.0.0.1:5432 abierto - servicio: Unknown
-2026-03-06 18:20:41 | INFO | Escaneo finalizado en 127.0.0.1 (1.0121s)
-2026-03-06 18:20:58 | INFO | Hosts detectados en rango: 254
-2026-03-06 18:21:07 | INFO | Hosts activos: []
-2026-03-06 18:21:07 | WARNING | No se detectaron hosts activos
-2026-03-06 18:52:31 | INFO | Hosts detectados en rango: 1
-2026-03-06 18:52:32 | INFO | Hosts activos: ['127.0.0.1']
-2026-03-06 18:52:32 | INFO | Iniciando escaneo en 127.0.0.1
-2026-03-06 18:52:33 | INFO | Escaneo finalizado en 127.0.0.1 (1.0437s)
-2026-03-06 18:52:49 | INFO | Hosts detectados en rango: 254
-2026-03-06 18:52:58 | INFO | Hosts activos: []
-2026-03-06 18:52:58 | WARNING | No se detectaron hosts activos
-2026-03-06 18:53:13 | INFO | Hosts detectados en rango: 1
-2026-03-06 18:53:13 | INFO | Hosts activos: ['127.0.0.1']
-2026-03-06 18:53:13 | INFO | Iniciando escaneo en 127.0.0.1
-2026-03-06 18:53:15 | INFO | 127.0.0.1:445 abierto - servicio: Unknown
-2026-03-06 18:53:16 | INFO | 127.0.0.1:5432 abierto - servicio: Unknown
-2026-03-06 18:53:16 | INFO | Escaneo finalizado en 127.0.0.1 (1.3117s)
+2026-03-09 19:05:52 | INFO | Hosts detectados en rango: 1
+2026-03-09 19:05:52 | INFO | Hosts activos: ['127.0.0.1']
+2026-03-09 19:05:52 | INFO | Iniciando escaneo en 127.0.0.1
+2026-03-09 19:05:57 | INFO | 127.0.0.1:135 abierto - servicio: Unknown
+2026-03-09 19:05:57 | INFO | Escaneo finalizado en 127.0.0.1 (4.0887s)
+2026-03-09 19:06:12 | INFO | Hosts detectados en rango: 254
+2026-03-09 19:06:21 | INFO | Hosts activos: []
+2026-03-09 19:06:21 | WARNING | No se detectaron hosts activos
+2026-03-09 19:06:56 | INFO | Hosts detectados en rango: 254
+2026-03-09 19:07:05 | INFO | Hosts activos: []
+2026-03-09 19:07:05 | WARNING | No se detectaron hosts activos
+2026-03-09 19:11:23 | INFO | Hosts detectados en rango: 1
+2026-03-09 19:11:24 | INFO | Hosts activos: ['127.0.0.1']
+2026-03-09 19:11:24 | INFO | Iniciando escaneo en 127.0.0.1
+2026-03-09 19:11:25 | INFO | Escaneo finalizado en 127.0.0.1 (1.0036s)
