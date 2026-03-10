@@ -22,6 +22,7 @@ El proyecto está estructurado como paquete instalable y puede ejecutarse como:
 * Motor de escaneo optimizado que acepta listas de puertos o rangos
 * Detección básica de servicios por puerto estándar
 * Banner Grabbing para identificación real del servicio
+* Banner Grabbing Concurrente para mejorar la velocidad del escaneo  
 * Barra de progreso en tiempo real durante el escaneo
 * Medición del tiempo total de escaneo
 ---
@@ -272,19 +273,42 @@ Las contribuciones son bienvenidas. Puedes:
 
 ## 🛣️ Roadmap
 
+### Fase 1 — Base del escáner
 * [x] Escaneo secuencial de puertos
-* [x] Interfaz gráfica (GUI)
 * [x] Interfaz CLI
-* [x] Escaneo multithreading
+* [x] Interfaz gráfica (GUI)
+* [x] Detección de puertos abiertos y cerrados
+* [x] Configuración de rango de puertos
+
+### Fase 2 — Rendimiento y optimización
+* [x] Escaneo concurrente con multithreading
 * [x] Configuración de threads y timeout
 * [x] Medición de tiempo de escaneo
-* [x] Exportación a CSV 
-* [x] Detección de servicios comunes
+* [x] Motor de escaneo optimizado que acepta listas de puertos
+* [x] Escaneo rápido con **Top Ports**
+
+### Fase 3 — Análisis de servicios
+* [x] Detección de servicios comunes por puerto
 * [x] Banner grabbing
-* [x] Exportación HTML
-* [x] Sistema de logs
+* [x] Banner grabbing concurrente optimizado
+
+### Fase 4 — Escaneo de red
+* [x] Descubrimiento de hosts activos
+* [x] Escaneo de red usando CIDR
+* [x] Barra de progreso durante el escaneo
+
+### Fase 5 — Reportes y exportación
+* [x] Exportación a CSV
+* [x] Generación de reportes HTML
+* [x] Sistema de logging profesional
+
+### Fase 6 — Próximas mejoras
+* [ ] Detección avanzada de servicios por banner
+* [ ] Resultados en tiempo real durante el escaneo
+* [ ] Reportes separados por host
+* [ ] Sistema de configuración por archivo
 * [ ] Tests automatizados
-* [ ] Banner grabbing concurrente optimizado
+
 
 ---
 
